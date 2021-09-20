@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:a3st ="http://gres.uninova.pt/a3st"  xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
+  <xs:element name="location" >
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="latitude" >
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:float" name="DecValue" minOccurs="1" maxOccurs="1" sawsdl:modelReference="/TemperatureSensor/hasLocation/Latitude/hasDecValue"/>
+              <xs:element type="xs:string" name="StrValue" minOccurs="1" maxOccurs="1" sawsdl:modelReference="/TemperatureSensor/hasLocation/Latitude/hasStrValue"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+		<xs:element name="longitude" >
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:float" name="DecValue" minOccurs="1" maxOccurs="1" sawsdl:modelReference="/TemperatureSensor/hasLocation/Longitude/hasDecValue"/>
+              <xs:element type="xs:string" name="StrValue" minOccurs="1" maxOccurs="1" sawsdl:modelReference="/TemperatureSensor/hasLocation/Longitude/hasStrValue"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:string" name="GpsUnits" sawsdl:modelReference="/TemperatureSensor/hasLocation/GPSLocation/hasLocUnits/LocationUnits" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

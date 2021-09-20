@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:a3st ="http://gres.uninova.pt/a3st"  xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
+  <xs:element name="TempSensor" >
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="tempunits" sawsdl:modelReference="/TemperatureSensor/hasTempUnits/TemperatureUnits" a3st:mdi-ref="1;2"/>
+        <xs:element type="xs:float" name="indoorValue" sawsdl:modelReference ="/IndoorTemperatureSensor/hasDecValue"/>
+        <xs:element type="xs:string" name="humidity"/>
+        <xs:element type="xs:float" name="outdoorValue" sawsdl:modelReference ="/OutdoorTemperatureSensor/hasDecValue"/>
+        <xs:element type="xs:byte" name="heat"/>
+        <xs:element type="xs:byte" name="cool"/>
+        <xs:element type="xs:byte" name="fan"/>
+        <xs:element type="xs:byte" name="hold"/>
+        <xs:element type="xs:string" name="minTemp"/>
+        <xs:element type="xs:string" name="maxTemp"/>
+        <xs:element type="xs:string" name="minTempY"/>
+        <xs:element type="xs:string" name="maxTempY"/>
+        <xs:element type="xs:byte" name="heatMode"/>
+        <xs:element type="xs:byte" name="fanMode"/>
+        <xs:element type="xs:byte" name="filtChng"/>
+        <xs:element type="xs:byte" name="mode"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <a3st:map-data-ind a3st:mdi-id="1" a3st:individual="Fahrenheit">F</a3st:map-data-ind>
+      <a3st:map-data-ind a3st:mdi-id="2" a3st:individual="Celsius">C</a3st:map-data-ind>
+     </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

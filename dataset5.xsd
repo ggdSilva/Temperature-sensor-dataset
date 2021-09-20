@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:a3st ="http://gres.uninova.pt/a3st"  xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
+  <xs:element name="temp" >
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="location" >
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:float" name="latitudeValue" minOccurs="1" maxOccurs="1" sawsdl:modelReference="/TemperatureSensor/hasLocation/Latitude/hasDecValue"/>
+              <xs:element type="xs:float" name="longitudeValue" minOccurs="1" maxOccurs="1" sawsdl:modelReference="/TemperatureSensor/hasLocation/Longitude/hasDecValue"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:string" name="unit" sawsdl:modelReference="/TemperatureSensor/hasTempUnits/TemperatureUnits" a3st:mdi-ref="1;2"/>
+        <xs:element type="xs:float" name="value" sawsdl:modelReference="/TemperatureSensor/hasDecValue"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <a3st:map-data-ind a3st:mdi-id="1" a3st:individual="Fahrenheit">Fah</a3st:map-data-ind>
+      <a3st:map-data-ind a3st:mdi-id="2" a3st:individual="Celsius">Cel</a3st:map-data-ind>
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

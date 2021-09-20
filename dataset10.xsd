@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:a3st ="http://gres.uninova.pt/a3st"  xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
+  <xs:element name="TemperatureSensor" >
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="credit"/>
+        <xs:element type="xs:anyURI" name="credit_URL"/>
+        <xs:element name="image">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:anyURI" name="url"/>
+              <xs:element type="xs:string" name="title"/>
+              <xs:element type="xs:anyURI" name="link"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="location" >
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="zip"/>
+              <xs:element type="xs:float" name="latitudeDecValue" sawsdl:modelReference="/TemperatureSensor/hasLocation/Latitude/hasDecValue"/>
+              <xs:element type="xs:float" name="longitudeDecValue" sawsdl:modelReference="/TemperatureSensor/hasLocation/Longitude/hasDecValue"/>
+              <xs:element type="xs:string" name="elevation"/>
+			  <xs:element type="xs:string" name="latitudeStrValue" sawsdl:modelReference="/TemperatureSensor/hasLocation/Latitude/hasStrValue"/>
+              <xs:element type="xs:string" name="longitudeStrValue" sawsdl:modelReference="/TemperatureSensor/hasLocation/Longitude/hasStrValue"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:string" name="temperature_string" />
+        <xs:element type="xs:float" name="value_f" sawsdl:modelReference="/TemperatureSensor/hasDecValue"/>
+        <xs:element type="xs:float" name="value_c" sawsdl:modelReference="/TemperatureSensor/hasDecValue"/>
+        <xs:element type="xs:byte" name="relative_humidity"/>
+        <xs:element type="xs:string" name="wind_string"/>
+        <xs:element type="xs:string" name="wind_dir"/>
+        <xs:element type="xs:byte" name="wind_degrees"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

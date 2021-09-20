@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:a3st ="http://gres.uninova.pt/a3st"  xmlns:sawsdl="http://www.w3.org/ns/sawsdl">
+  <xs:element name="TempSensor" >
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="units" sawsdl:modelReference="/TemperatureSensor/hasTempUnits/TemperatureUnits" a3st:mdi-ref="1;2"/>
+        <xs:element type="xs:float" name="sensor4value" sawsdl:modelReference ="/TemperatureSensor/hasDecValue" />
+        <xs:element type="xs:float" name="sensor5value" sawsdl:modelReference ="/TemperatureSensor/hasDecValue" />
+        <xs:element type="xs:float" name="sensor6value" sawsdl:modelReference ="/TemperatureSensor/hasDecValue" />
+        <xs:element type="xs:float" name="sensor7value" sawsdl:modelReference ="/TemperatureSensor/hasDecValue" />
+        <xs:element type="xs:byte" name="relay1state"/>
+        <xs:element type="xs:byte" name="relay2state"/>
+        <xs:element type="xs:byte" name="relay3state"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <a3st:map-data-ind a3st:mdi-id="1" a3st:individual="Fahrenheit">F</a3st:map-data-ind>
+      <a3st:map-data-ind a3st:mdi-id="2" a3st:individual="Celsius">C</a3st:map-data-ind>
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
